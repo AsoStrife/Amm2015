@@ -1,0 +1,20 @@
+# Questo file contiene la definizione della riscrittura delle url
+
+# attiva il rewrite engine per la nostra applicazione
+RewriteEngine  on
+
+# Intercetta tutte le url del tipo 
+# http://mioserver/miapagina
+# trasformandole in
+# http://mioserver/index.php?page=miapagina&subpage=home
+# mioserver -> nome del server 
+# miapagina -> cio' che viene scritto immediatamente dopo il nome del server
+# La regola redireziona tutto il traffico alla pagina index.php, che smista poi le richieste allo script php corretto.
+# La parte [QSA] appende il resto della query string alla riscrittura
+RewriteRule    ^([a-zA-Z0-9_-]+)$  index.php?page=$1&subpage=home [QSA]
+
+# Questa regola intercetta tutte le url del tipo
+# http://mioserver/miapagina/miasottopagina 
+# trasformandola in
+# http://mioserver/index.php?page=miapagina&subpage=miasottopagina
+RewriteRule    ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$  index.php?page=$1&subpage=$2 [QSA]
