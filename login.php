@@ -15,7 +15,7 @@
         echo "select* from app_users where username='$user' AND password='$pass'" ;
         
         $res    = $mysqli->query("select* from app_users where username='$user' AND password='$pass'" );
-        if(mysqli_num_rows($res) == 1)
+        if($res->num_rows == 1)
         {
             $array = mysqli_fetch_array($res);
             $_SESSION['username']   = $array['username'];

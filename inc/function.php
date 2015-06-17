@@ -45,7 +45,7 @@ define("DB_NAME", "amm15_corrigaAndrea");
         echo updateHeroes($_POST['idC']);
   
 	function updateHeroes($id){
-				$mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+		$mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 
 		$res 	= $mysqli->query
 		(
@@ -61,6 +61,9 @@ define("DB_NAME", "amm15_corrigaAndrea");
 
 		$heroes = '';
 
+		if($res->num_rows == 0)
+			return '<option value="-1"> --Nessun dato presente-- </option>';
+
 		while ($row = mysqli_fetch_assoc($res))
 		{
 			$heroes .= '<option value="' . $row['IdEroe'] . '">' . $row['NomeEroe'] . '</option>' . "\r\n";
@@ -74,7 +77,7 @@ define("DB_NAME", "amm15_corrigaAndrea");
 
 	function updateFrasi($id){
 		$mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
-		
+
 		if($id == null)
 			return "<tr> <td> Nessun risultato trovato </td> </tr>";
 
