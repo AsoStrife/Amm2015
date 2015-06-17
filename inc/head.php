@@ -1,6 +1,6 @@
 <?	
-	//error_reporting (0); 
-	//ini_set('display_error', '0');
+	error_reporting (0); 
+	ini_set('display_error', '0');
 
 	$page = basename($_SERVER['PHP_SELF']);
 
