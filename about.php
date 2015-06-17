@@ -12,7 +12,7 @@
         	<h1>Informazioni sul progetto</h1>
             <p> Questo progetto sfrutta un database da me creato diversi anni fa, con l'intenzione di creare una raccolta di citazioni dei diversi Final Fantasy. </p>
             <p> Il progetto funziona in questo modo: per poter svolgere delle ricerche bisogna autenticarsi (la home page stessa sarà inacessibile senza login). <br> Una volta
-                effettuata l'autenticazione si potrà  scegliere un capitolo dal menu a tendina. Una volta selezionato un capitolo, l'evento .change scatenerà una chiamata ajax che agiornerà 
+                effettuata l'autenticazione si potrà  scegliere un capitolo dal menu a tendina. Una volta selezionato un capitolo, l'evento .change scatenerà una chiamata ajax che aggiornerà 
                 il menu a tendina seguente con l'elenco degli eroi. Una volta selezionato anche l'eroe, si potrà premere il pulsante cerca che effettuerà un altra chiamata ajax stampando tutte
                 le citazioni disponibili. </p>
             <p> Requisiti soddisfatti: 
