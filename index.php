@@ -19,6 +19,7 @@
 			<h1>Le frasi più belle di Final Fantasy</h1>
             <form style="margin:20px 0 20px 0;">
             <select id="chapters">
+                    <option value="-1">--Seleziona una voce--</option>
                 <?php foreach($capitoli as $capitolo) : ?>
                     <option value="<?php echo $capitolo['IdCapitolo']; ?>"><?php echo $capitolo['NomeCapitolo']; ?></option>
                 <?php endforeach; ?>
