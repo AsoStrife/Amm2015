@@ -1,10 +1,9 @@
 <? 
     session_start();
-
+    include("inc/function.php")
     if(isset($_SESSION['logged']) == true)
         header("Location: index.php");
 
-    include('config.php');
     $error = false;
 
     if(isset($_POST['goLogin']))

@@ -1,5 +1,21 @@
 
 <?php	
+define("DB_SERVER", "localhost"); 
+/*
+ * Server locale
+  **
+define("DB_USER", "root"); 
+define("DB_PASS", ""); 
+define("DB_NAME", "ffstory_frasi"); 
+
+/*
+ * Server remoto
+  */
+define("DB_USER", "corrigaAndrea"); 
+define("DB_PASS", "fringuello5140"); 
+define("DB_NAME", "amm15_corrigaAndrea"); 
+/**/
+
 	function updateCapitoli(){
 		$mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 		$res 	= $mysqli->query
@@ -29,7 +45,8 @@
         echo updateHeroes($_POST['idC']);
   
 	function updateHeroes($id){
-		$mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+				$mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+
 		$res 	= $mysqli->query
 		(
 			'
@@ -48,7 +65,7 @@
 		{
 			$heroes .= '<option value="' . $row['IdEroe'] . '">' . $row['NomeEroe'] . '</option>' . "\r\n";
 		}
-		$mysqli->close();
+		//$mysqli->close();
 		return $heroes;
 	}
 

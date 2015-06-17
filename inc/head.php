@@ -1,6 +1,6 @@
 <?	
-	error_reporting (0); 
-	ini_set('display_error', '0');
+	//error_reporting (0); 
+	//ini_set('display_error', '0');
 
 	$page = basename($_SERVER['PHP_SELF']);
 
@@ -14,7 +14,6 @@
 <meta name="language" content="it" /> 
 <meta name="distribution" content="global" />
 <link rel="stylesheet" type="text/css" href="css/global.css" />
-<link rel="stylesheet" type="text/css" href="css/menu-orizzontale.css" />
 <link rel="apple-touch-icon" href="img/icon/ffstory-72x72.png" sizes="72x72" />
 <link rel="apple-touch-icon" href="img/icon/ffstory-114x114.png" sizes="114x114" />
 <link rel="icon" href="img/icon/ffstory-475x475.png" />
