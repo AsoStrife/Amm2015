@@ -1,7 +1,7 @@
 <? 
     session_start();
     include("inc/function.php");
-    if(isset($_SESSION['logged']) == true)
+    if($_SESSION['logged'] == true)
         header("Location: index.php");
 
     $error = false;
@@ -12,8 +12,12 @@
         $pass = md5($_POST['password']);
 
         $mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
-        echo "select* from app_users where username='$user' AND password='$pass'" ;
         
+        if(trim($user) == '' || trim($pass) == ''){ 
+            $error = true;
+            $_SESSION['logged'] = false;
+        }        
+
         $res    = $mysqli->query("select* from app_users where username='$user' AND password='$pass'" );
         if($res->num_rows == 1)
         {
@@ -45,7 +49,7 @@
    		<div class="main-content">
 			<h1>Effettua l'accesso</h1>
             <?php if($error): ?>
-                <div class="error"> Login errato, riprova </div>
+                <div class="login-error"> Login errato, riprova </div>
             <? endif;?>
             <form style="margin:20px 0 20px 0;" method="post" action="login.php">
                 <label for="username">Username</label> <input type="text" name="username" id="username"/>

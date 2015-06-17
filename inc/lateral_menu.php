@@ -1,6 +1,6 @@
 <div class="lateral-menu">
 
-    <?php if(isset($_SESSION['logged']) == true): ?>
+    <?php if($_SESSION['logged'] == true): ?>
 	    <h1 class="h1m30">Bentornato: <?=$_SESSION['username'];?></h1>
 	    <h2>Grado: <?=$_SESSION['level'];?></h2>
 	        

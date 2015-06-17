@@ -90,6 +90,9 @@ p > a.button-submit{
 	color:#FFF;
 	
 }
+
+.login-error{padding:10px; background-color: #f2dede; border:1px solid #ebccd1; color:a94442; margin-top:20px;}
+
 p > a.button-submit:hover{
 text-decoration:none;
 }
