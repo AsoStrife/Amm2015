@@ -28,7 +28,5 @@
          </div>            
     </div>
 
-<a href="#" class="scrollup">Torna su!</a>
-
 </body>
 </html>
