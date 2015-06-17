@@ -7,7 +7,7 @@
         <?php if($_SESSION['level'] == "admin"): ?>
 	        <p> Totale Frasi: <?=getFrasiCount();?></p>
 	        <p> Totale Utenti: <?=getUtentiCount();?> </p>
-	        <p> Totale Erori <?=getEroiCount();?>: </p>
+	        <p> Totale Eroi <?=getEroiCount();?>: </p>
 	        <p> Totale Capitoli: <?=getCapitoliCount();?> </p>
     	<?php endif;?>
 
