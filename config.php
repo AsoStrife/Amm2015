@@ -1,13 +1,16 @@
-<?php
-	define("DB_SERVER", 'localhost');
-	define("DB_USER", 'root');
-	define("DB_PASS", '');
-	define("DB_NAME", 'ffstory_frasi');
+<?
+define("DB_SERVER", "localhost"); 
 
-	$mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+/*
+ * Server locale
+  *
+define("DB_USER", "root"); 
+define("DB_PASS", ""); 
+define("DB_NAME", "ffstory_frasi"); 
 
-	/*
-	if (!isset($mysqli)) {
-                $mysqli->close();            
-        }
-*/
+/*
+ * Server remoto
+  */
+define("DB_USER", "corrigaAndrea"); 
+define("DB_PASS", "fringuello5140"); 
+define("DB_NAME", "amm15_corrigaAndrea"); 
