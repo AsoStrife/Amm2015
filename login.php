@@ -1,7 +1,7 @@
 <? 
     session_start();
     include("inc/function.php");
-    if($_SESSION['logged'] == true)
+    if(isset($_SESSION['logged']) && $_SESSION['logged'] == true)
         header("Location: index.php");
 
     $error = false;
