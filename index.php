@@ -4,7 +4,7 @@
     if(isset($_SESSION['logged']) == false)
         header("Location: login.php");
 
-    include('config.php');
+    //include('config.php');
     include('inc/function.php');
     include ('inc/head.php'); 
     $capitoli = updateCapitoli();
