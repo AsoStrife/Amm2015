@@ -74,6 +74,9 @@ define("DB_NAME", "amm15_corrigaAndrea");
 
 	function updateFrasi($id){
 		$mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+		
+		if($id == null)
+			return "<tr> <td> Nessun risultato trovato </td> </tr>";
 
 		$res 	= $mysqli->query
 		(
