@@ -95,6 +95,9 @@ define("DB_NAME", "amm15_corrigaAndrea");
 
 		$quotes = '';
 
+		if(!$res)
+			return '<tr> <td> Non è presente nessuna frase </td> </tr>';
+
 		while ($row = mysqli_fetch_assoc($res))
 		{
 			$quotes .=
@@ -132,5 +135,32 @@ define("DB_NAME", "amm15_corrigaAndrea");
 		$r 	= $mysqli->query("select * from app_users");
 		$mysqli->close();
 		return $r->num_rows;
+	}
+
+
+	if (isset($_POST['d'])) 
+        eliminaFrasi();
+    /*
+     * Funzione che cancella tutte le frasi e la tabella app_frs_frase in una transazione 
+     */
+	function eliminaFrasi(){
+		$mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+
+		/*
+		 * Inizio la transazione
+		 */
+		$mysqli->autocommit(false);	
+
+		$mysqli->query("DELETE FROM app_frs_frase");
+		//Se non riesco a distruggere anche la tabella torno indietro
+		if(!$mysqli->query("DROP TABLE app_frs_frase"))
+			$mysqli->rollback();
+
+		$mysqli->commit();
+		$mysqli->autocommit(true); 
+		/*
+		 * Fine transazione
+		 */
+		$mysqli->close();
 	}
 ?>

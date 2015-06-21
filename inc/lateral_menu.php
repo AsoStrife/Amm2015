@@ -9,6 +9,13 @@
 	        <p> Totale Utenti: <?=getUtentiCount();?> </p>
 	        <p> Totale Eroi <?=getEroiCount();?>: </p>
 	        <p> Totale Capitoli: <?=getCapitoliCount();?> </p>
+
+	        <p>
+	        	<ul>
+	        		<li id="delete"> <a href="#">Cancella tutte le frasi </a> </li>
+	        	</ul>
+                (Per ripristinare le frasi controllare la pagina di informazioni progetto)
+	        </p>
     	<?php endif;?>
 
     	<ul>
@@ -20,3 +27,34 @@
 	        </ul>
 	<?php endif; ?>
 </div>
+
+<script type="text/javascript">
+    $(document).ready
+    (
+        function()
+        {
+            $('li[id="delete"]').click
+            (
+                function()
+                {
+                    $.ajax
+                    (
+                        {
+                            type: 'POST',
+                            url:  'inc/function.php',
+                            data: {
+                                "d": true
+                                },
+                            
+                            //data: {'idCapitolo': $('select[id="chapters"]').val()},
+                            success: function(data) { console.debug('Chiamata eliminaFrasi avvenuta correttamente'); },
+                            error:  function(data) { console.debug('Errore nella chiamata eliminaFrasi');} 
+                        }
+
+                    );
+                }
+            );
+        }
+    );
+
+</script>
