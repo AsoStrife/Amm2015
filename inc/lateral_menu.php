@@ -16,6 +16,9 @@
 	        	</ul>
                 (Per ripristinare le frasi controllare la pagina di informazioni progetto)
 	        </p>
+
+            <div class"" id="mex"></div>
+
     	<?php endif;?>
 
     	<ul>
@@ -47,7 +50,12 @@
                                 },
                             
                             //data: {'idCapitolo': $('select[id="chapters"]').val()},
-                            success: function(data) { console.debug('Chiamata eliminaFrasi avvenuta correttamente'); },
+                            success: function(data) { 
+                                console.debug('Chiamata eliminaFrasi avvenuta correttamente'); 
+                                $('#mex').addClass("success");
+                                $('#mex').html("Frasi e tabella cancellati correttamente"); 
+
+                            },
                             error:  function(data) { console.debug('Errore nella chiamata eliminaFrasi');} 
                         }
 
